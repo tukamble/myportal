@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MYPORTAL</title
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shorcut icon" type="image/x-icon" href="/images/fevicon.png"/>
+  <link rel="stylesheet" href="bootstrap3/css/bootstrap.min.css">
+  <script src="bootstrap3/js/jquery.min_1.js"></script>
+  <script src="bootstrap3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+        <img src="images/aquasavelogo.png" />
+    </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="#">about</a></li>
+            <li class="active"><a href="#">srevics</a></li>
+            <li class="active"><a href="#">profilio</a></li>
+            <li class="active"><a href="#">contact</a></li>
+         </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user">signup</span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in">Login</span></a></li>
+      </ul>
+  </div>
+</nav>
+<div class="container">
+    <h2>slider</h2>
+    <div class="col-md-offset-5"> 
+        <img class="mySlides" src="images/img1.jpg" style="width:80%">
+        <img class="mySlides" src="images/img2.jpg" style="width:80%">
+        <img class="mySlides" src="images/img3.jpg" style="width:80%">
+        <img class="mySlides" src="images/8.jpg" style="width:80%">
+        <button class="w3-button-w3black-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+    
+     <div class="jumbotron text-center">
+           <h1>wel come to our portal</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>     
+     </div>
+            
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 subscribe pull-left">
+      <h3>tweeter feeds</h3>
+      <h3> facebook feeds</h3>
+    </div>
+    <div class="col-md-4">
+      <h3>Contact us</h3>
+      <P>h-183 amazelife web solution pvt ltd
+         infront of Z.P.school,tathawade pune,411033
+      </P>
+    </div>
+    <div class="col-md-4"> 
+      <ul class="social pull-right">
+          <h3>social</h3>
+            <li><a href="#"><i class="fa-facebook">FACEBOOK</i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin">linked in</i></a></li>
+            <li><a href="#"><span class="fa fa-youtube">youtube</span></a></li>
+            <li><a href="#"><span class="instragram"> instagram</span></a></li>
+      </ul>
+      
+    </div>
+  </div>
+</div>
+ 
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="footer text-center">
+                    <h4>&cpyright2018</h4>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
