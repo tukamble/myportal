@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <script src="js/validate.js"></script>
+        <style>
+            span{
+                color : red;
+            }
+            form{background-color: #f1f1f1;
+            height: 200;
+            padding: 10px;
+            margin:  10px;}
+            form input{column-width: 50%;}
+
+        </style>
+    </head>
+    <body>
+    <div>
+        <form action="success.html" method="post">
+            <label for="fullname">Enter your Name </label>
+            <input type="text" name="fullname" id="fullname" maxlength="100" />
+            <span id="fullnameError"></span>
+            <br /><br />
+
+            <label for="email">Enter your Email</label>
+            <input type="text" name="email" id="email" />
+            <span id="emailError"></span>
+            <br /><br />
+
+            <label for="mobile">Enter your Mobile</label>
+            <input type="text" name="mobile" id="mobile" maxlength="10" />
+            <span id="mobileError"></span>
+            <br /><br />
+
+            <label for="username">Choose Username</label>
+            <input type="text" name="username" id="username" maxlength="15" />
+            <span id="usernameError"></span>
+            <br /><br />
+
+            <label for="password">Choose Password</label>
+            <input type="password" name="password" id="password" maxlength="8" />
+            <span id="passwordError"></span>
+            <br /><br />
+
+            <label for="confirm_password">Choose Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" maxlength="8" /> <br /><br />
+
+            <input type="submit" id="btnSubmit" value="Submit" />
+        </form>
+    </div>
+    </body>
+    <script type="text/javascript">
+        
+        window.onload = function(){
+    var submitbtn = document.getElementById("btnSubmit");
+    submitbtn.onclick = function(){
+        if(document.getElementById("fullname").value == ""){
+            document.getElementById("fullnameError").innerHTML = "Enter your Name";
+            return false;
+        } else if(document.getElementById("email").value == ""){
+            document.getElementById("emailError").innerHTML = "Enter your email";
+            return false;
+        } else if(document.getElementById("mobile").value == ""){
+            document.getElementById("mobileError").innerHTML = "Enter your mobile";
+            return false;
+        } else if(document.getElementById("username").value == ""){
+            document.getElementById("usernameError").innerHTML = "Enter your username";
+            return false;
+        } else if(document.getElementById("password").value == ""){
+            document.getElementById("passwordError").innerHTML = "Enter your password";
+            return false;
+        } else {
+            document.getElementById("fullnameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("mobileError").innerHTML = "";
+            document.getElementById("usernameError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+            return true;
+        }
+
+
+    }
+
+    var mobileInp = document.getElementById("mobile");
+    mobileInp.onkeypress = function(e){
+        if(e.keyCode >= 48 && e.keyCode <= 57) {
+            return true;
+        }
+        return false;
+    }
+
+    var emailInp = document.getElementById("email");
+    emailInp.onblur = function(){
+        //console.log(emailInp.value);
+        if(!(emailInp.value.indexOf('@') > -1)) {
+            document.getElementById("emailError").innerHTML = "Enter Proper email";
+            document.getElementById("email").value = "";
+        } else {
+            document.getElementById("emailError").innerHTML = "";
+        }
+
+        if(!(emailInp.value.indexOf('.') > -1)) {
+            document.getElementById("emailError").innerHTML = "Enter Proper email";
+            document.getElementById("email").value = "";
+        } else {
+            document.getElementById("emailError").innerHTML = "";
+        }
+    }
+}
+    </script>
+</html>
